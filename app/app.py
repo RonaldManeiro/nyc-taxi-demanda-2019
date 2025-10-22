@@ -1,5 +1,7 @@
 import streamlit as st
-from utils import load_data, preprocess_data
+from utils import (load_data, preprocess_data, trips_per_hour,
+                   avg_trip_duration_per_hour, trip_distance_distribution)
+import plotly.express as px
 
 # Configuracion de la pagina.
 st.set_page_config(
@@ -53,8 +55,65 @@ elif opcion == "3. Metodologia":
 
 elif opcion == "4. Analisis exploratorio de datos":
     st.header("Análisis exploratorio de datos")
-    st.write(
-        "En esta sección se realiza un análisis exploratorio de los datos de taxis.")
+
+    st.subheader("Cantidad de viajes por hora del día")
+    # Calcular viajes por hora
+    viajes_hora = trips_per_hour(df)
+
+    # Columna de porcentaje
+    viajes_hora['porcentaje'] = viajes_hora['num_viajes'] / \
+        viajes_hora['num_viajes'].sum() * 100
+    # Grafico interactivo
+    fig = px.bar(
+        viajes_hora,
+        x='hour',
+        y='porcentaje',
+        title="Distribución porcentual de viajes según la hora del día",
+        labels={"hour": "Hora del día",
+                "porcentaje": "Porcentaje de viajes (%)"}
+    )
+    st.plotly_chart(fig)
+
+# Grafico de duracion promedio por hora
+    st.subheader("Duración promedio del viaje por hora del día")
+
+    # Calcular duracion promedio por hora
+    duracion_hora = avg_trip_duration_per_hour(df)
+
+    # Grafico interactivo
+    fig2 = px.line(
+        duracion_hora,
+        x='hour',
+        y='duracion_promedio_min',
+        markers=True,
+        title="Duración promedio del viaje según la hora del día",
+        labels={"hour": "Hora del día",
+                "duracion_promedio_min": "Duración promedio (minutos)"}
+    )
+    st.plotly_chart(fig2, use_container_width=True)
+
+    # Histograma de la distribucion de distancias de viajes
+
+    st.subheader("Distribución de la distancia de los viajes")
+
+    # Filtrar y preparar datos
+    df_dist = trip_distance_distribution(df)
+
+    # Histograma interactivo
+
+    fig3 = px.histogram(
+        df_dist,
+        x='trip_distance',
+        nbins=60,
+        histnorm="percent",
+        title="Distribución de la distancia de los viajes (en millas)",
+        labels={"trip_distance": "Distancia del viaje (millas)"},
+        opacity=0.75
+    )
+
+    fig3.update_layout(bargap=0.05)
+    st.plotly_chart(fig3, use_container_width=True)
+
 
 elif opcion == "5. Analisis Estadístico":
     st.header("Análisis Estadístico")

@@ -5,14 +5,14 @@ import pandas as pd
 BASE_DIR = Path(__file__).resolve().parents[1]
 
 
-def get_processed_path(filename="tripdata_clean.csv"):
+def get_processed_path(filename="tripadata_sample.csv"):
     """
     Devuelve la ruta completa al archivo dentro de data/processed.
     """
     return BASE_DIR / "data" / "processed" / filename
 
 
-def load_data(filename="tripdata_clean.csv"):
+def load_data(filename="tripdata_sample.csv"):
     """
     Carga el CSV limpio desde data/processed como DataFrame. 
     """
@@ -29,7 +29,7 @@ def preprocess_data(df):
 
 def trips_per_hour(df):
     df['hour'] = df['tpep_pickup_datetime'].dt.hour
-    return df.groupby('hour').size()
+    return df.groupby('hour').size().reset_index(name='num_viajes')
 
 
 def categorize_distance(df):
@@ -42,3 +42,33 @@ def categorize_distance(df):
     df['distance_category'] = pd.cut(
         df['trip_distance'], bins=[-1, 2, 10, 10000], labels=labels)
     return df
+
+
+def avg_trip_duration_per_hour(df):
+    """
+    Calcula la duracion promedio (en minutos) de los viajes por hora del dia. 
+    """
+    # Aseguramos que la fecha este en formato datetime
+    if not pd.api.types.is_datetime64_any_dtype(df['tpep_pickup_datetime']):
+        df['tpep_pickup_datetime'] = pd.to_datetime(df['tpep_pickup_datetime'])
+
+    # Extraemos la hora
+    df['hour'] = df['tpep_pickup_datetime'].dt.hour
+
+    # Calculamos duracion promedio
+    duracion_hora = (
+        df.groupby('hour')['trip_duration_min']
+        .mean()
+        .reset_index()
+        .rename(columns={'trip_duration_min': 'duracion_promedio_min'})
+    )
+    return duracion_hora
+
+
+def trip_distance_distribution(df):
+    """
+    Devuelve una version filtrada del DataFrame para analizar la distribucion de las distancias de los viajes, elminando valores extremos.
+    """
+    # Eliminamos valores extremos
+    df_filtered = df[df['trip_distance'] <= 150]
+    return df_filtered

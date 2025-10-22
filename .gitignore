@@ -208,4 +208,4 @@ __marimo__/
 
 # Carpetas que hay que ignorar por peso de las base de datos 
 data/raw/
-data/processed/
+data/processed/tripdata_clean.csv
