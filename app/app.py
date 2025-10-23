@@ -39,7 +39,7 @@ opcion = st.sidebar.radio(
     [
         "1. Planteamiento del problema",
         "2. Marco teórico",
-        "3. Metodologia",
+        "3. Cuestionario SQL",
         "4. Analisis exploratorio de datos",
         "5. Analisis Estadístico",
         "6. Conclusiones"
@@ -59,7 +59,7 @@ if opcion == "1. Planteamiento del problema":
     - Reducir tiempos de espera para usuarios 
     """)
     st.write("Este proyecto busca analizar la demanda de taxis en la ciudad de Nueva York durante 2019, con enfoque en patrones horarios y geográficos, utilizando herramientas estadísticas y computacionales modernas.")
-    
+
     st.subheader("Objetivo General")
     st.write("Analizar la distribución temporal y espacial de la demanda de taxis en Nueva York durante el año 2019, para identificar zonas y horarios de alta demanda que puedan aportar conclusiones útiles desde el punto de vista estadístico y urbano.")
 
@@ -78,17 +78,17 @@ elif opcion == "2. Marco teórico":
     st.header("Marco teórico")
 
     st.subheader("Antecedentes de la Investigación")
-   
+
     st.write("Los antecedentes permiten definir e interpretar el problema planteado mediante la síntesis de un marco referencial conformado por las exploraciones y trabajos vinculados a la investigación, estableciendo un enfoque teórico y metodológico de la misma. Los antecedentes que sustentan esta investigación son las que mencionan a continuación:")
-    
+
     st.write("En “Analysis and prediction of New York City taxi and Uber demands” (realizado por D. Correa y C. Moyano), analizan sobre la distribución espacio/temporal y el nivel de demanda tanto de los taxis (amarillos y verdes) como del servicio de Uber. Y no solamente se llegó a la conclusión de que los dos servicios son imprescindibles en Nueva York, sino que también el más utilizado es el de los taxis amarillos con un 86% del total de viajes registrados (se analizaron más de 90 millones de viajes, y 78.382.423 fueron de los taxis amarillos).  Además de la aplicación de herramientas estadísticas como el “modelo de regresión lineal” para el análisis de los resultados.")
-    
+
     st.write("También se encuentra el artículo “Testimonios del Taxi: Aprendizajes de 15 años de viajes en Nueva York” (hecho por Fernando A. Ramírez, en el año 2024), donde el autor explica la manera en que las apps de movilidad han impactado en los negocios tradicionales de taxis en Nueva York (aunque no tomó en cuenta por completo el año 2019 durante la realización del análisis, debido a la aparición del Covid-19 durante aquella época y el impacto predecible que iba a tener en los medios de transporte debido a la cuarentena). Se puede resaltar el hecho de que los taxis amarillos no estaban “captando muchos viajes cortos que son más rentables por minuto de conducción”, mientras que con las apps de movilidad ocurría el caso contrario hacían “un mejor trabajo captando viajes más cortos y menos planificados gracias a la ubicuidad y facilidad de pago que ofrecen estas aplicaciones móviles”.")
 
     st.subheader("Bases Teóricas")
-    
+
     st.write("Se tiene que la Movilidad Urbana es el conjunto de desplazamientos de personas y mercancías dentro de un área urbana y las condiciones en las que se realizan. Este concepto abarca todos los modos de transporte (público, privado, taxis/servicios de viaje compartido) y su impacto en la calidad de vida, el medio ambiente y la eficiencia económica de la ciudad.")
-    
+
     st.write("Entre los medios de transporte que se usan hoy en día en la sociedad, el Taxi es un vehículo de alquiler que incluye un conductor profesional que se contrata para transportar pasajeros a uno o varios destinos elegidos por ellos (el cliente puede indicar el punto de partida y el de llegada en su viaje). La palabra «taxi», según el Diccionario de la lengua española, es una forma abreviada de la palabra «taxímetro», que a su vez deriva del griego τάξις, «tasa» y μέτρον, que significa «medida». Usualmente, los lugares donde se recoge y se deja al pasajero se deciden por el proveedor (oferente), mientras que el usuario (demandante) los determina.")
 
     st.write("A diferencia de los otros tipos de transporte de personas, como son las líneas del metro, tranvía o del autobús, el servicio ofrecido por el taxi se caracteriza por ser «puerta a puerta». La persona que tiene por oficio la conducción de un taxi se le llama «taxista». Sin mencionar que la tarifa se calcula generalmente a través de un taxímetro, aunque suelen estar reguladas por la autoridad local.")
@@ -131,10 +131,123 @@ elif opcion == "2. Marco teórico":
 
     """)
 
-elif opcion == "3. Metodologia":
-    st.header("Metodología")
-    st.write(
-        "En esta sección se detalla la metodología utilizada para el análisis de los datos.")
+elif opcion == "3. Cuestionario SQL":
+    import pandas as pd
+
+    st.header("🔑 Resultados Clave del Cuestionario")
+
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+
+    kpis_path = os.path.join(current_dir, "..", "data", "processed",
+                             "resultados_consolidados.csv")
+
+    try:
+        # Cargar el archivo con la ruta absoluta
+        df_kpis = pd.read_csv(kpis_path)
+
+    except FileNotFoundError:
+        # Se ejecutara si no se encuentra el archivo
+        st.error(
+            f"Error (Archivo no encontrado): Verifique que 'resultados_consolidados.csv' esté en: {kpis_path}"
+        )
+        st.stop()
+
+    try:
+        # 1. Título principal de la sección
+        st.subheader("Resultados Detallados por Consulta SQL")
+        st.markdown("---")
+
+        # 2. Iterar por cada consulta en orden (1, 2, 3, 4, ...)
+        for id_consulta in sorted(df_kpis['ID_Consulta'].unique()):
+            # Filtrar el DataFrame para la consulta actual
+            df_consulta = df_kpis[df_kpis['ID_Consulta'] == id_consulta].copy()
+
+            # Obtener el nombre de la consulta para el título
+            nombre_consulta = df_consulta['Consulta'].iloc[0]
+
+            # Título de la sección
+            st.markdown(f"### 🔍 Consulta {id_consulta}: {nombre_consulta}")
+            st.markdown("---")
+
+            # Lógica de visualización específica por ID
+
+            if id_consulta == 1:
+                # C1: Distancia promedio y tiempo promedio
+                col1, col2 = st.columns(2)
+
+                # Distancia Promedio
+                dist_row = df_consulta[df_consulta['Etiqueta']
+                                       == 'Distancia promedio'].iloc[0]
+                col1.metric("Distancia Promedio",
+                            f"{dist_row['Valor Numerico']} {dist_row['Unidad']}")
+
+                # Tiempo Promedio
+                tiempo_row = df_consulta[df_consulta['Etiqueta']
+                                         == 'Tiempo promedio'].iloc[0]
+                col2.metric(
+                    "Tiempo Promedio", f"{tiempo_row['Valor Numerico']} {tiempo_row['Unidad']}")
+
+            elif id_consulta == 2:
+                # C2: Método de pago más común
+
+                # 1. Obtener el nombre del método
+                metodo_row = df_consulta[df_consulta['Etiqueta']
+                                         == 'Método de pago más usado'].iloc[0]
+                metodo = metodo_row['Unidad']
+
+                # 2. Obtener el conteo
+                conteo_row = df_consulta[df_consulta['Etiqueta']
+                                         == 'Cantidad de viajes que lo usaron'].iloc[0]
+                conteo = int(conteo_row['Valor Numerico'])
+
+                st.metric("Método de Pago Más Común",
+                          metodo.title(),
+                          f"{conteo:,} viajes registrados")
+
+            elif id_consulta == 3:
+                # C3: Propina promedio según tipo de pago
+                st.write("Propina Promedio por Método de Pago (Propina > 0):")
+                df_display = df_consulta[['Etiqueta', 'Valor Numerico', 'Unidad']].rename(columns={
+                    'Etiqueta': 'Tipo de Pago',
+                    'Valor Numerico': 'Propina Promedio',
+                    'Unidad': 'Unidad'
+                })
+                st.dataframe(df_display, hide_index=True)
+
+            elif id_consulta == 4:
+                # C4: Porcentaje de viajes por tipo de tarifa
+                st.write("Distribución Porcentual por Tipo de Tarifa:")
+                df_display = df_consulta[['Etiqueta', 'Valor Numerico', 'Unidad']].rename(columns={
+                    'Etiqueta': 'Tipo de Tarifa',
+                    'Valor Numerico': 'Porcentaje',
+                    'Unidad': 'Unidad'
+                })
+                # Formatear el porcentaje a dos decimales
+                df_display['Porcentaje'] = df_display['Porcentaje'].round(2)
+                st.dataframe(df_display, hide_index=True)
+
+            elif id_consulta == 5:
+                # C5: Categoría de Distancia.
+                st.write("Conteo de Viajes por Categoría de Distancia:")
+                df_display = df_consulta[['Etiqueta', 'Valor Numerico', 'Unidad']].rename(columns={
+                    'Etiqueta': 'Categoría de Distancia',
+                    'Valor Numerico': 'Conteo de Viajes',
+                    'Unidad': 'Unidad'
+                })
+                # Convertir a entero para mejor lectura
+                df_display['Conteo de Viajes'] = df_display['Conteo de Viajes'].astype(
+                    int)
+                st.dataframe(df_display, hide_index=True)
+
+            # Espacio al final de cada consulta
+            st.markdown("---")
+
+    except Exception as e:
+        # Si la carga fue exitosa pero la extracción falló
+        st.error(
+            "Error (Fallo de Extracción): Se encontró un error al procesar los datos del CSV. Revise las etiquetas y el formato."
+        )
+        st.exception(e)
 
 elif opcion == "4. Analisis exploratorio de datos":
     st.header("Análisis exploratorio de datos")
