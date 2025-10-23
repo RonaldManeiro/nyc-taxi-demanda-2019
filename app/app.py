@@ -49,7 +49,30 @@ opcion = st.sidebar.radio(
 # Contenido segun la opcion seleccionada
 if opcion == "1. Planteamiento del problema":
     st.header("Planteamiento del problema")
-    st.write("En esta sección se describe el problema que se pretende resolver con el análisis de los datos de taxis en NYC durante diciembre de 2019.")
+    st.write("""
+                La movilidad urbana es uno de los ejes más importantes para el funcionamiento eficiente de una gran ciudad. En metrópolis como Nueva York, el servicio de taxis juega un rol crucial en el transporte diario de millones de personas. A lo largo del día, la demanda de taxis no es uniforme: varía según la hora, el día de la semana y la zona geográfica. Estas variaciones reflejan patrones sociales, económicos y de comportamiento urbano (por ejemplo, desplazamientos laborales en horas punta, actividades nocturnas o turismo).
+             """)
+    st.write("Comprender estos patrones permite a empresas, autoridades de transporte y conductores tomar decisiones más informadas, como:")
+    st.markdown("""
+    - Optimizar la distribución de taxis durante las horas pico 
+    - Diseñar políticas de movilidad más eficientes 
+    - Reducir tiempos de espera para usuarios 
+    """)
+    st.write("Este proyecto busca analizar la demanda de taxis en la ciudad de Nueva York durante 2019, con enfoque en patrones horarios y geográficos, utilizando herramientas estadísticas y computacionales modernas.")
+    
+    st.subheader("Objetivo General")
+    st.write("Analizar la distribución temporal y espacial de la demanda de taxis en Nueva York durante el año 2019, para identificar zonas y horarios de alta demanda que puedan aportar conclusiones útiles desde el punto de vista estadístico y urbano.")
+
+    st.subheader("Objetivos Especificos")
+    st.markdown("""
+    - Procesar y limpiar la base de datos de viajes en taxi para obtener un subconjunto representativo manejable.
+    - Explorar la variación de la demanda a lo largo del día, identificando horas pico y horas valle.
+    - Analizar la distribución geográfica de los viajes para determinar zonas de mayor concentración de demanda.
+    - Construir un dashboard en Power BI que permita visualizar los patrones temporales y espaciales.
+    - Desarrollar una aplicación en Python (Streamlit) para interactuar dinámicamente con los datos y realizar análisis básicos.
+    - Realizar un breve análisis estadístico descriptivo que permita interpretar los resultados obtenidos.
+    """)
+
 
 elif opcion == "2. Marco teórico":
     st.header("Marco teórico")
