@@ -1,0 +1,9 @@
+##  1. Carga y muestra de datos
+
+- Se carga el archivo CSV desde la ruta local.
+- Se limita la muestra a 1,000,000 registros con `Table.FirstN(...)`.
+- Se promueven los encabezados.
+
+```m
+OrigenReducido = Table.FirstN(Csv.Document(File.Contents(...)), 1000000),
+#"Encabezados promovidos" = Table.PromoteHeaders(...)
