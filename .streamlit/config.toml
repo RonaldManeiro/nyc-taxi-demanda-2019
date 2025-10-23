@@ -1,0 +1,12 @@
+[theme]
+# Base: Oscuro
+base="dark"
+# Color Primario (botones, enlaces): Un azul limpio
+primaryColor="#367CFF" 
+# Color de Fondo: Un gris muy oscuro (casi negro)
+backgroundColor="#0E1117"
+# Color de Fondo Secundario (barra lateral, cajas de código)
+secondaryBackgroundColor="#262730"
+# Color del texto: Blanco suave
+textColor="#FAFAFA"
+font="sans serif"

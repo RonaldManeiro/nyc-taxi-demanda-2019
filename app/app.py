@@ -6,6 +6,7 @@ import statsmodels.api as sm
 import json
 import os
 import requests
+import io
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -39,10 +40,12 @@ opcion = st.sidebar.radio(
     [
         "1. Planteamiento del problema",
         "2. Marco teórico",
-        "3. Cuestionario SQL",
-        "4. Analisis exploratorio de datos",
-        "5. Analisis Estadístico",
-        "6. Conclusiones"
+        "3. Datos",
+        "4. Cuestionario SQL",
+        "5. Análisis exploratorio de datos",
+        "6. Análisis Estadístico",
+        "7. Conclusiones",
+        "8. Bibliografías"
     ]
 )
 
@@ -131,7 +134,24 @@ elif opcion == "2. Marco teórico":
 
     """)
 
-elif opcion == "3. Cuestionario SQL":
+elif opcion == "3. Datos":
+    st.header("Muestra y Estructura de los Datos")
+
+    st.markdown("""
+        Aquí se muestra una **muestra aleatoria** del DataFrame resultante después del proceso de limpieza. 
+        Este es el conjunto de datos final utilizado para la aplicación; en la aplicacion se utilizó una muestra de 500.000 datos.
+    """)
+
+    # Mostrar una muestra significativa (ej. las primeras 1000 filas)
+    st.subheader("Muestra de Datos (2,000 Filas)")
+    st.dataframe(
+        df.head(2000),
+        use_container_width=True,
+        # Opcional: ajustar altura si el DF es muy grande visualmente
+        # height=400
+    )
+
+elif opcion == "4. Cuestionario SQL":
     import pandas as pd
 
     st.header("🔑 Resultados Clave del Cuestionario")
@@ -249,7 +269,7 @@ elif opcion == "3. Cuestionario SQL":
         )
         st.exception(e)
 
-elif opcion == "4. Analisis exploratorio de datos":
+elif opcion == "5. Análisis exploratorio de datos":
     st.header("Análisis exploratorio de datos")
 
     st.subheader("Cantidad de viajes por hora del día")
@@ -422,11 +442,14 @@ elif opcion == "4. Analisis exploratorio de datos":
     st.plotly_chart(fig7, use_container_width=True)
 
 
-elif opcion == "5. Analisis Estadístico":
+elif opcion == "6. Análisis Estadístico":
     st.header("Análisis Estadístico")
     st.write("En esta sección se lleva a cabo un análisis estadístico de los datos.")
 
-elif opcion == "6. Conclusiones":
+elif opcion == "7. Conclusiones":
     st.header("Conclusiones")
     st.write(
         "En esta sección se presentan las conclusiones derivadas del análisis realizado.")
+
+elif opcion == "8. Bibliografías":
+    st.header("Bibliografias")
