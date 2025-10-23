@@ -10,7 +10,7 @@ db_path = BASE_DIR / "data" / "processed" / "tripdata_clean.csv"
 df = pd.read_csv(db_path)
 
 # Tomar muestra aleatoria
-df_sample = df.sample(n=200000, random_state=42)
+df_sample = df.sample(n=500000, random_state=42)
 
 # Guardar muestra
 path_sample = BASE_DIR / "data" / "processed" / "tripdata_sample.csv"

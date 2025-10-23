@@ -1,7 +1,14 @@
 import streamlit as st
 from utils import (load_data, preprocess_data, trips_per_hour,
-                   avg_trip_duration_per_hour, trip_distance_distribution)
+                   avg_trip_duration_per_hour, trip_distance_distribution, payment_distribution, fare_tip_relation, trips_per_zone)
 import plotly.express as px
+import statsmodels.api as sm
+import json
+import os
+import requests
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 
 # Configuracion de la pagina.
 st.set_page_config(
@@ -113,6 +120,117 @@ elif opcion == "4. Analisis exploratorio de datos":
 
     fig3.update_layout(bargap=0.05)
     st.plotly_chart(fig3, use_container_width=True)
+
+    # Grafico de la distribucion de metodos de pago
+    st.subheader("Método de pago más utilizado")
+    from utils import payment_distribution
+    pagos = payment_distribution(df)
+
+    fig4 = px.pie(
+        pagos,
+        names="Método de pago",
+        values="Cantidad de viajes",
+        title="Distribución de los métodos de pago",
+        hole=0.4
+    )
+    st.plotly_chart(fig4)
+
+    # Grafico de relacion entre tarifa total y propina
+
+    st.subheader("Relación entre tarifa total y propina")
+    from utils import fare_tip_relation
+
+    df_fare_tip = fare_tip_relation(df)
+
+    fig5 = px.scatter(
+        df_fare_tip,
+        x='total_amount',
+        y='tip_amount',
+        opacity=0.6,
+        title="Relación entre Tarifa Total y Propina (con línea de tendencia)",
+        labels={
+            "total_amount": "Tarifa total (USD)",
+            "tip_amount": "Propina (USD)"
+        },
+        trendline="ols",
+        color_discrete_sequence=["#1f77b4"]
+    )
+
+    # Análisis estadistico automatico
+    # Calcular la correlacion entre ambas variables
+    correlacion = df_fare_tip['total_amount'].corr(df_fare_tip["tip_amount"])
+
+    # Interpretar la correlacion
+    if correlacion > 0.7:
+        interpretacion = "fuerte y positiva"
+    elif correlacion > 0.3:
+        interpretacion = "moderada y positiva"
+    elif correlacion > 0:
+        interpretacion = "débil y positiva"
+    elif correlacion < -0.7:
+        interpretacion = "fuerte y negativa"
+    elif correlacion < -0.3:
+        interpretacion = "moderada y negativa"
+    elif correlacion < 0:
+        interpretacion = "débil y negativa"
+    else:
+        interpretacion = "nula o inexistente"
+
+    # Texto interpretativo
+    analisis = f"""
+    **Análisis de la relación entre tarifa total y propina:**
+    - Coeficiente de correlación: **{correlacion:.3f}**
+    - Interpretación: Existe una correlación {interpretacion} entre el monto total del viaje y la propina.
+    """
+
+    st.plotly_chart(fig5)
+    st.markdown(analisis)
+
+    # Mapa de calor de zonas
+    st.subheader("Mapa del Total de Viajes por Zona de Recogida")
+
+    from utils import trips_per_zone
+    zonas, geojson = trips_per_zone(df)
+
+    fig6 = px.choropleth_mapbox(
+        zonas,
+        geojson=geojson,
+        color="Total_viajes",
+        locations="location_id",
+        featureidkey="properties.location_id",
+        hover_name="Zone",
+        hover_data=["Borough", "Total_viajes"],
+        color_continuous_scale="Viridis",
+        mapbox_style="carto-positron",
+        center={"lat": 40.7128, "lon": -74.0060},
+        zoom=9,
+        opacity=0.6,
+        title="Total de Viajes por Zona de Recogida"
+    )
+    st.plotly_chart(fig6, use_container_width=True)
+
+    # Mapa del total de viajes por zona de llegada
+    st.subheader("Mapa del Total de Viajes por Zona de Llegada")
+
+    from utils import trips_per_dropoff_zone
+    zonas_drop, geojson_drop = trips_per_dropoff_zone(df)
+
+    fig7 = px.choropleth_mapbox(
+        zonas_drop,
+        geojson=geojson_drop,
+        color="Total_viajes",
+        locations="location_id",
+        featureidkey="properties.location_id",
+        hover_name="Zone",
+        hover_data=["Borough", "Total_viajes"],
+        color_continuous_scale="Viridis",
+        mapbox_style="carto-positron",
+        center={"lat": 40.7128, "lon": -74.0060},
+        zoom=9,
+        opacity=0.6,
+        title="Total de viajes por zona de llegada"
+    )
+    st.plotly_chart(fig7, use_container_width=True)
 
 
 elif opcion == "5. Analisis Estadístico":
