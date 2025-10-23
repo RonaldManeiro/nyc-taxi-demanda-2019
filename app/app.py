@@ -93,6 +93,44 @@ elif opcion == "2. Marco teórico":
 
     st.write("A diferencia de los otros tipos de transporte de personas, como son las líneas del metro, tranvía o del autobús, el servicio ofrecido por el taxi se caracteriza por ser «puerta a puerta». La persona que tiene por oficio la conducción de un taxi se le llama «taxista». Sin mencionar que la tarifa se calcula generalmente a través de un taxímetro, aunque suelen estar reguladas por la autoridad local.")
 
+    st.write("Los tipos de taxis se pueden clasificar por su nivel de servicio (ejecutivo, convencional), tecnología (eléctrico, autónomo), accesibilidad (adaptado) o función (colectivo). También existen clasificaciones locales, como los taxis de sitio, libres o de radio en algunas ciudades, o el tipo de vehículo usado.")
+
+    st.markdown("**Según el tipo de servicio y vehículo:**")
+
+    st.markdown("""
+    - **Taxis convencionales:** Vehículos estándar que se pueden tomar en la calle o en paradas. 
+    - **Taxis ejecutivos:** Suelen ser vehículos de gama alta, más cómodos y con un servicio exclusivo. 
+    - **Taxis adaptados:** Diseñados para personas con discapacidades, equipados con rampas o elevadores. 
+    - **Taxis eléctricos:** Vehículos de cero emisiones, impulsados por energía eléctrica. 
+    - **Taxis autónomos:** Vehículos que operan sin conductor humano, gracias a la tecnología avanzada. 
+    - **Taxis acuáticos:** En ciudades con cuerpos de agua, ofrecen transporte sobre el agua, como en ríos o lagos.
+    """)
+
+    st.markdown("**Según la modalidad y operación:**")
+
+    st.markdown("""
+    - **Taxis de sitio:** Tienen una ubicación fija y se solicitan a través de una central telefónica.
+    - **Taxis libres:** Se pueden encontrar en la calle o en paradas designadas.
+    - **Taxis colectivos:** Comparten ruta y precio predeterminado entre varios pasajeros. A veces se les llama "colectivos" o "carro de ruta".
+    """)
+
+    st.markdown("**Según el país:**")
+
+    st.markdown("""
+    - **Taxis amarillos:** Característicos en muchas ciudades, a menudo asociados con el transporte público general. 
+    - **Taxis de sitio o "pulmonías":** En ciertas regiones, son vehículos específicos con un color o característica distintiva, como en Mazatlán. 
+    - **Cocotaxis:** Vehículos motorizados con forma de coco, típicos de Cuba. 
+    - **Tuc tuc:** Mototaxis que se encuentran en ciudades de Tailandia y otras partes del mundo.
+    """)
+
+    st.write("En Nueva York, los taxis son de dos variedades: amarillo y verde (son símbolos de la ciudad ampliamente reconocibles). Los vehículos de taxi deben tener una medalla de taxi para operar: este sistema fue creado en 1937 como una limitación impuesta por el gobierno en la oferta de taxis; pero luego, Nueva York ya no vendió más medallas hasta 1996 después de una subasta donde se presentaría más adelante una escasez que, para el 2014, se vendían a más de un millón de dólares cada una). La principal diferencia entre los taxis amarillos y verdes radica en las zonas donde están autorizados para recoger pasajeros:")
+
+    st.markdown("""
+    - **Los taxis amarillos (“medallion taxis”)** pueden recoger pasajeros en cualquier punto de la ciudad de Nueva York, incluyendo los cinco distritos y los aeropuertos. Además de que se pueden detener en la calle con la mano o encontrar en las paradas designadas para taxis.
+    - **Los taxis verdes** (comúnmente conocidos como **"boro taxis"**, que empezaron a aparecer en agosto del 2013), están autorizados para recoger pasajeros en los distritos de Queens, Brooklyn, Bronx y Staten Island, así como en la parte alta de Manhattan (por encima de la calle 96 Este y la calle 110 Oeste). No pueden recoger pasajeros que los detengan en la calle en el centro de Manhattan (la "zona de exclusión de llamadas") ni en los aeropuertos de LaGuardia y JFK.
+
+    """)
+
 elif opcion == "3. Metodologia":
     st.header("Metodología")
     st.write(
