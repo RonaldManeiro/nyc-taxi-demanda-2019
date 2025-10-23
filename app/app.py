@@ -76,7 +76,22 @@ if opcion == "1. Planteamiento del problema":
 
 elif opcion == "2. Marco teórico":
     st.header("Marco teórico")
-    st.write("En esta sección se presenta el marco teórico relacionado con el análisis de la demanda de taxis.")
+
+    st.subheader("Antecedentes de la Investigación")
+   
+    st.write("Los antecedentes permiten definir e interpretar el problema planteado mediante la síntesis de un marco referencial conformado por las exploraciones y trabajos vinculados a la investigación, estableciendo un enfoque teórico y metodológico de la misma. Los antecedentes que sustentan esta investigación son las que mencionan a continuación:")
+    
+    st.write("En “Analysis and prediction of New York City taxi and Uber demands” (realizado por D. Correa y C. Moyano), analizan sobre la distribución espacio/temporal y el nivel de demanda tanto de los taxis (amarillos y verdes) como del servicio de Uber. Y no solamente se llegó a la conclusión de que los dos servicios son imprescindibles en Nueva York, sino que también el más utilizado es el de los taxis amarillos con un 86% del total de viajes registrados (se analizaron más de 90 millones de viajes, y 78.382.423 fueron de los taxis amarillos).  Además de la aplicación de herramientas estadísticas como el “modelo de regresión lineal” para el análisis de los resultados.")
+    
+    st.write("También se encuentra el artículo “Testimonios del Taxi: Aprendizajes de 15 años de viajes en Nueva York” (hecho por Fernando A. Ramírez, en el año 2024), donde el autor explica la manera en que las apps de movilidad han impactado en los negocios tradicionales de taxis en Nueva York (aunque no tomó en cuenta por completo el año 2019 durante la realización del análisis, debido a la aparición del Covid-19 durante aquella época y el impacto predecible que iba a tener en los medios de transporte debido a la cuarentena). Se puede resaltar el hecho de que los taxis amarillos no estaban “captando muchos viajes cortos que son más rentables por minuto de conducción”, mientras que con las apps de movilidad ocurría el caso contrario hacían “un mejor trabajo captando viajes más cortos y menos planificados gracias a la ubicuidad y facilidad de pago que ofrecen estas aplicaciones móviles”.")
+
+    st.subheader("Bases Teóricas")
+    
+    st.write("Se tiene que la Movilidad Urbana es el conjunto de desplazamientos de personas y mercancías dentro de un área urbana y las condiciones en las que se realizan. Este concepto abarca todos los modos de transporte (público, privado, taxis/servicios de viaje compartido) y su impacto en la calidad de vida, el medio ambiente y la eficiencia económica de la ciudad.")
+    
+    st.write("Entre los medios de transporte que se usan hoy en día en la sociedad, el Taxi es un vehículo de alquiler que incluye un conductor profesional que se contrata para transportar pasajeros a uno o varios destinos elegidos por ellos (el cliente puede indicar el punto de partida y el de llegada en su viaje). La palabra «taxi», según el Diccionario de la lengua española, es una forma abreviada de la palabra «taxímetro», que a su vez deriva del griego τάξις, «tasa» y μέτρον, que significa «medida». Usualmente, los lugares donde se recoge y se deja al pasajero se deciden por el proveedor (oferente), mientras que el usuario (demandante) los determina.")
+
+    st.write("A diferencia de los otros tipos de transporte de personas, como son las líneas del metro, tranvía o del autobús, el servicio ofrecido por el taxi se caracteriza por ser «puerta a puerta». La persona que tiene por oficio la conducción de un taxi se le llama «taxista». Sin mencionar que la tarifa se calcula generalmente a través de un taxímetro, aunque suelen estar reguladas por la autoridad local.")
 
 elif opcion == "3. Metodologia":
     st.header("Metodología")
