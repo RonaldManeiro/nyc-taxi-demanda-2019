@@ -1,0 +1,19 @@
+ID_Consulta,Consulta,Etiqueta,Valor Numerico,Unidad
+1,Distancia promedio,Distancia promedio,2.98,millas
+1,tiempo promedio de viaje en minutos,Tiempo promedio,15.07,minutos
+2,Método de pago más común,Método de pago más usado,,tarjeta de crédito
+2,Método de pago más común,Cantidad de viajes que lo usaron,4736318.0,viajes
+3,Propina promedio según el tipo de pago (propina > 0),tarjeta de crédito,3.25,$
+3,Propina promedio según el tipo de pago (propina > 0),efectivo,2.9,$
+3,Propina promedio según el tipo de pago (propina > 0),sin cargo,3.48,$
+3,Propina promedio según el tipo de pago (propina > 0),en disputa,2.68,$
+4,Porcentaje de viajes correspondientes a cada tipo de tarifa,Tarifa estandar,96.78,%
+4,Porcentaje de viajes correspondientes a cada tipo de tarifa,JFK,2.59,%
+4,Porcentaje de viajes correspondientes a cada tipo de tarifa,Tarifa negociada,0.29,%
+4,Porcentaje de viajes correspondientes a cada tipo de tarifa,Newark,0.26,%
+4,Porcentaje de viajes correspondientes a cada tipo de tarifa,Nassau o Westchester,0.08,%
+4,Porcentaje de viajes correspondientes a cada tipo de tarifa,Desconocido,0.0,%
+4,Porcentaje de viajes correspondientes a cada tipo de tarifa,Tarifa grupal,0.0,%
+5,Conteo de viajes por categoría de distancia,Corto,3926694.0,viajes
+5,Conteo de viajes por categoría de distancia,Medio,2295375.0,viajes
+5,Conteo de viajes por categoría de distancia,Largo,393369.0,viajes
