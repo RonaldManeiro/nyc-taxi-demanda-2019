@@ -72,19 +72,19 @@ Puedes explorar los distintos apartados desde el menú lateral ✅
 
 if opcion == "2. Planteamiento del problema":
     st.header("Planteamiento del problema")
-    
+
     st.write("Al incrementar la necesidad del ser humano de recorrer largas distancias para llegar a diferentes sitios en el mundo, no tardaron en aparecer los primeros inventos que permitieron y facilitaron: Tanto el desplazamiento de personas de un lugar a otro, como el desarrollo urbano y social de las ciudades cercanas a estos medios de transporte. Convirtiéndose la movilidad urbana en uno de los ejes más importantes para el funcionamiento eficiente de una gran ciudad. En el caso de las metrópolis como Nueva York, el servicio de taxis juega un papel crucial en el transporte diario de millones de personas al disminuir el uso de transportes privados (sobre todo cuando una persona no posee su propio automóvil por cuestiones personales, o desea evitar el estrés que produce el conducir en el tráfico). Además de que el servicio de taxis proporciona una opción rápida y segura de moverse alrededor de una zona determinada, siendo una de las primeras opciones que buscan las personas a la hora de viajar.")
 
     st.write("A lo largo de un día, la demanda de taxis no es uniforme ya que existen múltiples variables que pueden interferir o beneficiar al momento de prestar sus servicios al público: Algunas de ellas pueden ser la hora en que se solicita al taxista, el clima que puede cambiar sin previo aviso, el día de la semana (además de encontrarse en una época específica del año, como las vacaciones de verano o de Navidad) o la zona geográfica donde se realizará la ruta solicitada por el cliente. Estas variaciones se ven reflejadas en patrones sociales, económicos y de comportamiento urbano (por ejemplo; desplazamientos laborales en horas punta, actividades nocturnas o turismo).")
-    
+
     st.write("Cuando se tiene una mejor comprensión de estos patrones y sus efectos durante las jornadas diarias de los conductores, tanto las empresas como las autoridades de transporte y cada uno de sus empleados involucrados pueden tomar decisiones más informadas como:")
-    
+
     st.markdown("""
     - Optimizar la distribución de taxis durante las horas pico 
     - Diseñar políticas de movilidad más eficientes 
     - Reducir tiempos de espera para usuarios 
     """)
-    
+
     st.write("De este modo: Se busca con este proyecto analizar la demanda de taxis en la ciudad de Nueva York durante el mes de diciembre del año 2019, con enfoque en patrones horarios y geográficos, utilizando herramientas estadísticas y computacionales modernas.")
 
     st.subheader("Objetivo General")
@@ -118,7 +118,7 @@ elif opcion == "3. Marco teórico":
     st.write("A medida que fue incrementando la necesidad del ser humano de explorar y llegar a diferentes sitios del mundo que se encuentran a largas distancias del punto de origen (resultando cada vez más difícil y fatigador cumplir ese objetivo únicamente viajando a pie), no tardaron en aparecer los primeros inventos que permitieran facilitar el desplazamiento de un lugar a otro (independientemente de si el camino elegido cubriera o no muchos kilómetros por recorrer). Y con la aparición de la primera rueda que facilitó el comercio y la comunicación entre diferentes culturas, se obtuvo un avance positivo en el desarrollo de tecnologías y sistemas de transporte que cumplieran el objetivo esperado. Reduciendo el tiempo de traslado y facilitando la movilidad activa (caminar o bicicleta) de la gente, convirtiéndose con el transcurso del tiempo en un catalizador de desarrollo urbano y social para los pueblos y ciudades.")
 
     st.write("De este modo, la introducción de transportes (tanto públicos como privados) a la vida cotidiana de las personas se convirtió en un factor clave para el crecimiento de las grandes ciudades al permitir la generación de empleos en diversas áreas (tanto en el manejo de los transportes como en el mantenimiento de éstos) y, por ende, acelerando el crecimiento de las ciudades cercanas como fue en el caso de las zonas cercanas a estas líneas de transporte. Por ejemplo: La construcción del primer ferrocarril en Inglaterra permitió la generación de empleos al tener una enorme capacidad de transporte grandes cantidades de carga y de personas, así como el crecimiento de las ciudades cercanas a las líneas ferroviarias gracias al impacto positivo que tuvo en el aumento de la eficiencia del comercio. Además de permitir el acceso a empleo, educación y servicios básicos de poblaciones vulnerables.")
-    
+
     st.write("Entonces; se tiene que la Movilidad Urbana es el conjunto de desplazamientos de personas y mercancías dentro de un área urbana y las condiciones en las que estos viajes se realizan, abarcando en este concepto todos los modos de transporte (público, privado, taxis/servicios de viaje compartido) y su impacto en la calidad de vida, el medio ambiente y la eficiencia económica de la ciudad.")
 
     st.write("Entre los medios de transporte que se usan hoy en día en la sociedad, se encuentran los servicios de Taxi; vehículos de alquiler que incluyen un conductor profesional que se contrata para transportar pasajeros a uno o varios destinos elegidos por ellos (el cliente puede indicar el punto de partida y el de llegada en su viaje). La palabra «taxi», según el Diccionario de la lengua española, es una forma abreviada de la palabra «taxímetro», que a su vez deriva del griego τάξις, «tasa» y μέτρον, que significa «medida». Usualmente, los lugares donde se recoge y se deja al pasajero se deciden por el proveedor (oferente), mientras que el usuario (demandante) los determina.")
@@ -133,7 +133,7 @@ elif opcion == "3. Marco teórico":
     - **Taxis adaptado:** este tipo de taxis se encuentran diseñados para personas con discapacidades físicas o movilidad reducida, equipados con rampas o elevadores para facilitar el acceso de sillas de ruedas y otros dispositivos de movilidad. 
     - **Taxis ecológico:** aquel que utiliza tecnologías y combustibles más limpios para reducir las emisiones de carbono y minimizar su impacto en el medio ambiente. Suelen ser vehículos híbridos o eléctricos que funcionan con baterías recargables, por lo que no emiten gases de escape nocivos y son más eficientes en el consumo de combustible. 
     """)
-    
+
     st.write("En Nueva York, los taxis se dividen en dos categorías: amarillo y verde, y son símbolos de la ciudad ampliamente reconocibles. Aunque puede parecer una opción de un precio elevado a la hora de moverse por la cuidad de Nueva York, en realidad los taxis pueden una opción práctica ya que son un medio de transporte moderno y limpio, tienen instalado un GPS a la vista tanto del conductor como del pasajero (lo que permite una visualización clara y precisa del viaje), y son una opción fiable a la hora de moverse por la noche en la ciudad.")
 
     st.write("Un detalle resaltante de los vehículos de taxi en esta ciudad es que deben tener una “Medalla de Taxi”: Un permiso transferible que permite a un conductor operar un taxi en la ciudad, siendo un sistema creado en 1937 para regular la oferta de taxis y limitar el número de licencias. Desde entonces, el gobierno de Nueva York ha regulado el precio de las medallas, que fluctúan casi diariamente. Para el año 2007, todas las inscripciones en los taxis amarillos fueron rediseñados y se volvieron fáciles de identificar con el número de la medalla seguido de un patrón ajedrezado en la parte trasera de ambos lados, un panel futurista con la tarifa en las puertas traseras y un logo retro con la inscripción **NYC Taxi** en las puertas delanteras con una T amarilla inscrita en un círculo negro (eliminando la parte “axi” en el año 2012 y dejando únicamente el logo NYC y la T en un círculo).")
@@ -153,13 +153,10 @@ elif opcion == "4. Datos":
         Este es el conjunto de datos final utilizado para la aplicación; en la aplicacion se utilizó una muestra de 500.000 datos.
     """)
 
-    # Mostrar una muestra significativa (ej. las primeras 1000 filas)
     st.subheader("Muestra de Datos (2,000 Filas)")
     st.dataframe(
         df.head(2000),
         use_container_width=True,
-        # Opcional: ajustar altura si el DF es muy grande visualmente
-        # height=400
     )
 
 elif opcion == "5. Cuestionario SQL":
@@ -481,7 +478,7 @@ elif opcion == "6. Análisis exploratorio de datos":
 
 elif opcion == "7. Análisis y Conclusiones":
     st.header("Análisis y Conclusiones")
-    
+
     st.write("Incluso cuando no se trabajó con la base de datos completa del mes de diciembre (debido a la enorme demanda que iba a significar para la capacidad de las computadoras), se obtuvieron unos resultados significativos del subconjunto extraído al limpiar y procesar la BBDD:")
 
     st.write("De acuerdo con los gráficos generados por medio de Python, se puede observar que las horas pico de trabajo sí pueden llegar a influir en la solicitud de servicios de taxis por los clientes, ya que en el gráfico de barras de “Distribución Porcentual de viajes según la hora del día” el porcentaje es mayor entre las 15 y 20 horas del día. Con la barra de “Horas del día = 18” la mayor en altura con un 6,3484% de viajes en total, mientras que la barra de menor altura es la de “Horas del día = 4” con un 0,7444% de viajes en total. Esto indica que los taxis en Nueva York sí son una opción fiable para moverse por la ciudad durante las horas de la noche, siendo probablemente las horas donde hay un mayor desplazamiento de personas por las calles al poder disfrutar del entretenimiento nocturno que ofrecen al público.")
@@ -496,7 +493,7 @@ elif opcion == "8. Bibliografías":
     st.header("Bibliografias")
 
     st.write("New York City taxi trips. (2020, 29 diciembre). Kaggle. https://www.kaggle.com/datasets/dhruvildave/new-york-city-taxi-trips-2019")
-    
+
     st.write("Correa, D., & Moyano, C. (2023). Analysis & Prediction of New York City Taxi and Uber Demands. Journal Of Applied Research And Technology, 21(5), 886-898. https://doi.org/10.22201/icat.24486736e.2023.21.5.2074")
 
     st.write("Taxis de Nueva York: historia, cómo cogerlos, precios y horario. (s. f.). Guía Nómada de Nueva York. https://www.nuevayork.org/taxis/")
