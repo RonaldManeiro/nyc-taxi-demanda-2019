@@ -494,3 +494,17 @@ elif opcion == "7. Análisis y Conclusiones":
 
 elif opcion == "8. Bibliografías":
     st.header("Bibliografias")
+
+    st.write("New York City taxi trips. (2020, 29 diciembre). Kaggle. https://www.kaggle.com/datasets/dhruvildave/new-york-city-taxi-trips-2019")
+    
+    st.write("Correa, D., & Moyano, C. (2023). Analysis & Prediction of New York City Taxi and Uber Demands. Journal Of Applied Research And Technology, 21(5), 886-898. https://doi.org/10.22201/icat.24486736e.2023.21.5.2074")
+
+    st.write("Taxis de Nueva York: historia, cómo cogerlos, precios y horario. (s. f.). Guía Nómada de Nueva York. https://www.nuevayork.org/taxis/")
+
+    st.write("Concepth, & Concepth. (2023, 26 junio). El impacto del Desarrollo del Sistema de Transporte en la Historia de la Humanidad. Conceptos de la Historia. https://conceptosdelahistoria.com/revoluciones-y-guerras/revolucion-industrial/desarrollo-del-sistema-de-transporte/")
+
+    st.write("Colaboradores de Wikipedia. (2025, 7 agosto). Taxi. Wikipedia, la Enciclopedia Libre. https://es.wikipedia.org/wiki/Taxi")
+
+    st.write("Colaboradores de Wikipedia. (2025a, marzo 31). Taxis en Nueva York. Wikipedia, la Enciclopedia Libre. https://es.wikipedia.org/wiki/Taxis_en_Nueva_York")
+
+    st.write("Taxi. (2021, 13 febrero). Tipos de taxi: convencional, lujo, compartido, adaptado y ecológico | Radio Taxi La Alcoia. Radio-Taxi L’Alcoià. https://www.radiotaxilalcoia.org/tipos-de-taxi/")
