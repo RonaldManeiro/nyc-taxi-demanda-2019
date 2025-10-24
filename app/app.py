@@ -13,13 +13,15 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # Configuracion de la pagina.
 st.set_page_config(
-    page_title="Demanda de Taxis en NYC - Dicimebre 2019",
+    page_title="Demanda de Taxis en NYC - Diciembre 2019",
+    page_icon="🚕",
     layout="wide"
 )
 
 # Titulo principal
 
-st.title("Análisis de la Demanda de Taxis en NYC - Diciembre 2019")
+st.title("Análisis de la Demanda de Taxis en Nueva York - Diciembre 2019")
+
 
 # Cargar y preparar datos
 
@@ -38,19 +40,38 @@ st.sidebar.title("Navegación")
 opcion = st.sidebar.radio(
     "Ir a:",
     [
-        "1. Planteamiento del problema",
-        "2. Marco teórico",
-        "3. Datos",
-        "4. Cuestionario SQL",
-        "5. Análisis exploratorio de datos",
-        "6. Análisis Estadístico",
-        "7. Conclusiones",
-        "8. Bibliografías"
+        "1. Introducción",
+        "2. Planteamiento del problema",
+        "3. Marco teórico",
+        "4. Datos",
+        "5. Cuestionario SQL",
+        "6. Análisis exploratorio de datos",
+        "7. Análisis Estadístico",
+        "8. Conclusiones",
+        "9. Bibliografías"
     ]
 )
 
 # Contenido segun la opcion seleccionada
-if opcion == "1. Planteamiento del problema":
+if opcion == "1. Introducción":
+    st.markdown("""
+### 📊 Introducción
+
+Este proyecto presenta un análisis sobre el comportamiento de la **demanda de taxis en la ciudad de Nueva York durante diciembre de 2019**.
+
+El objetivo principal es **comprender los patrones de movilidad**, identificar las **zonas con mayor actividad** y analizar cómo **varía la demanda según la hora del día y la ubicación**.
+
+La aplicación está compuesta por:
+- 🧠 Un **análisis computacional** desarrollado con **Python y Streamlit**.
+- 📈 Un **dashboard en Power BI**.
+- 💾 Un **cuestionario SQL** con consultas específicas sobre la base de datos.
+
+---
+
+Puedes explorar los distintos apartados desde el menú lateral ✅
+""")
+
+if opcion == "2. Planteamiento del problema":
     st.header("Planteamiento del problema")
     st.write("""
                 La movilidad urbana es uno de los ejes más importantes para el funcionamiento eficiente de una gran ciudad. En metrópolis como Nueva York, el servicio de taxis juega un rol crucial en el transporte diario de millones de personas. A lo largo del día, la demanda de taxis no es uniforme: varía según la hora, el día de la semana y la zona geográfica. Estas variaciones reflejan patrones sociales, económicos y de comportamiento urbano (por ejemplo, desplazamientos laborales en horas punta, actividades nocturnas o turismo).
@@ -69,7 +90,7 @@ if opcion == "1. Planteamiento del problema":
     st.subheader("Objetivos Especificos")
     st.markdown("""
     - Procesar y limpiar la base de datos de viajes en taxi para obtener un subconjunto representativo manejable.
-    - Explorar la variación de la demanda a lo largo del día, identificando horas pico y horas valle.
+    - Explorar la variación de la demanda a lo largo del día, identificando horas pico.
     - Analizar la distribución geográfica de los viajes para determinar zonas de mayor concentración de demanda.
     - Construir un dashboard en Power BI que permita visualizar los patrones temporales y espaciales.
     - Desarrollar una aplicación en Python (Streamlit) para interactuar dinámicamente con los datos y realizar análisis básicos.
@@ -77,7 +98,7 @@ if opcion == "1. Planteamiento del problema":
     """)
 
 
-elif opcion == "2. Marco teórico":
+elif opcion == "3. Marco teórico":
     st.header("Marco teórico")
 
     st.subheader("Antecedentes de la Investigación")
@@ -134,7 +155,7 @@ elif opcion == "2. Marco teórico":
 
     """)
 
-elif opcion == "3. Datos":
+elif opcion == "4. Datos":
     st.header("Muestra y Estructura de los Datos")
 
     st.markdown("""
@@ -151,7 +172,7 @@ elif opcion == "3. Datos":
         # height=400
     )
 
-elif opcion == "4. Cuestionario SQL":
+elif opcion == "5. Cuestionario SQL":
     import pandas as pd
 
     st.header("🔑 Resultados Clave del Cuestionario")
@@ -269,7 +290,7 @@ elif opcion == "4. Cuestionario SQL":
         )
         st.exception(e)
 
-elif opcion == "5. Análisis exploratorio de datos":
+elif opcion == "6. Análisis exploratorio de datos":
 
     st.header("Análisis exploratorio de datos")
 
@@ -469,14 +490,14 @@ elif opcion == "5. Análisis exploratorio de datos":
     st.plotly_chart(fig7, use_container_width=True)
 
 
-elif opcion == "6. Análisis Estadístico":
+elif opcion == "7. Análisis Estadístico":
     st.header("Análisis Estadístico")
     st.write("En esta sección se lleva a cabo un análisis estadístico de los datos.")
 
-elif opcion == "7. Conclusiones":
+elif opcion == "8. Conclusiones":
     st.header("Conclusiones")
     st.write(
         "En esta sección se presentan las conclusiones derivadas del análisis realizado.")
 
-elif opcion == "8. Bibliografías":
+elif opcion == "9. Bibliografías":
     st.header("Bibliografias")
