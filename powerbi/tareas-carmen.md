@@ -11,7 +11,10 @@ Este documento resume las tareas realizadas durante el desarrollo del dashboard 
 - **Oct 20**: Creación de medidas DAX y visualizaciones principales
 - **Oct 21**: Validación de métricas y segmentaciones
 - **Oct 22**: Documentación técnica y organización del repositorio
-
+- **Oct 23**: Documentación técnica y organización del repositorio
+- **Oct 23**: Creación de medidas DAX y visualizaciones de pestaña Analisis Economico
+- **Oct 23**: Validación de métricas Analisis Economico
+- **Oct 23**: Documentación técnica y organización del repositorio
 ---
 
 ## Tareas completadas
