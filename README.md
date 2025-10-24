@@ -22,7 +22,7 @@ pip install -r requirements.txt
 ```
 __3️⃣ Cargar los datos originales 💾__
 
-Tu base de datos original (`2019-12.sqlite`) debe colocarse en las siguiente ruta para que los *notebooks* y la aplicación funcionen correctamente.
+La base de datos original (`2019-12.sqlite`) debe colocarse en las siguiente ruta para que los *notebooks* y la aplicación funcionen correctamente.
 
 > **Nota:** Estas carpetas (`data/raw/` y `data/processed/tripdata_clean.csv`) debido al tamaño de la base de datos, se ignoran en Git, por lo que debes colocar los archivos manualmente después de la clonación.
 
@@ -38,7 +38,8 @@ Debes ejecutar los *notebooks* en orden. Este proceso es **esencial** porque gen
     * Carga y limpia el *dataset* de 6.6M de filas.
     * **Genera el archivo grande** (`tripdata_clean.csv`) en `data/processed` para Power BI.
 * Por último debes ejecutar el archivo (`tripdata_sample.py`) que está en (`app/`) para generar la muestra representativa de la base de datos que utilizará la aplicacion **Streamlit**. Este sample se generará en (`data/processed/`) con el nombre de (`tripdata_sample.csv`).
-__ 5️⃣ Ejecutar la aplicación__
+
+__5️⃣ Ejecutar la aplicación__
 ```bash
 streamlit run app.py
 ```
