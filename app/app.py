@@ -113,48 +113,36 @@ elif opcion == "3. Marco teórico":
 
     st.subheader("Bases Teóricas")
 
-    st.write("Se tiene que la Movilidad Urbana es el conjunto de desplazamientos de personas y mercancías dentro de un área urbana y las condiciones en las que se realizan. Este concepto abarca todos los modos de transporte (público, privado, taxis/servicios de viaje compartido) y su impacto en la calidad de vida, el medio ambiente y la eficiencia económica de la ciudad.")
+    st.write("Las Bases Teóricas se encuentran conformadas por los conceptos, proposiciones y filosofías que buscan ofrecer una explicación detallada y precisa sobre el problema de estudio. Para este caso, las Bases Teóricas que respaldan este análisis es la información a continuación:")
 
-    st.write("Entre los medios de transporte que se usan hoy en día en la sociedad, el Taxi es un vehículo de alquiler que incluye un conductor profesional que se contrata para transportar pasajeros a uno o varios destinos elegidos por ellos (el cliente puede indicar el punto de partida y el de llegada en su viaje). La palabra «taxi», según el Diccionario de la lengua española, es una forma abreviada de la palabra «taxímetro», que a su vez deriva del griego τάξις, «tasa» y μέτρον, que significa «medida». Usualmente, los lugares donde se recoge y se deja al pasajero se deciden por el proveedor (oferente), mientras que el usuario (demandante) los determina.")
+    st.write("A medida que fue incrementando la necesidad del ser humano de explorar y llegar a diferentes sitios del mundo que se encuentran a largas distancias del punto de origen (resultando cada vez más difícil y fatigador cumplir ese objetivo únicamente viajando a pie), no tardaron en aparecer los primeros inventos que permitieran facilitar el desplazamiento de un lugar a otro (independientemente de si el camino elegido cubriera o no muchos kilómetros por recorrer). Y con la aparición de la primera rueda que facilitó el comercio y la comunicación entre diferentes culturas, se obtuvo un avance positivo en el desarrollo de tecnologías y sistemas de transporte que cumplieran el objetivo esperado. Reduciendo el tiempo de traslado y facilitando la movilidad activa (caminar o bicicleta) de la gente, convirtiéndose con el transcurso del tiempo en un catalizador de desarrollo urbano y social para los pueblos y ciudades.")
 
-    st.write("A diferencia de los otros tipos de transporte de personas, como son las líneas del metro, tranvía o del autobús, el servicio ofrecido por el taxi se caracteriza por ser «puerta a puerta». La persona que tiene por oficio la conducción de un taxi se le llama «taxista». Sin mencionar que la tarifa se calcula generalmente a través de un taxímetro, aunque suelen estar reguladas por la autoridad local.")
+    st.write("De este modo, la introducción de transportes (tanto públicos como privados) a la vida cotidiana de las personas se convirtió en un factor clave para el crecimiento de las grandes ciudades al permitir la generación de empleos en diversas áreas (tanto en el manejo de los transportes como en el mantenimiento de éstos) y, por ende, acelerando el crecimiento de las ciudades cercanas como fue en el caso de las zonas cercanas a estas líneas de transporte. Por ejemplo: La construcción del primer ferrocarril en Inglaterra permitió la generación de empleos al tener una enorme capacidad de transporte grandes cantidades de carga y de personas, así como el crecimiento de las ciudades cercanas a las líneas ferroviarias gracias al impacto positivo que tuvo en el aumento de la eficiencia del comercio. Además de permitir el acceso a empleo, educación y servicios básicos de poblaciones vulnerables.")
+    
+    st.write("Entonces; se tiene que la Movilidad Urbana es el conjunto de desplazamientos de personas y mercancías dentro de un área urbana y las condiciones en las que estos viajes se realizan, abarcando en este concepto todos los modos de transporte (público, privado, taxis/servicios de viaje compartido) y su impacto en la calidad de vida, el medio ambiente y la eficiencia económica de la ciudad.")
 
-    st.write("Los tipos de taxis se pueden clasificar por su nivel de servicio (ejecutivo, convencional), tecnología (eléctrico, autónomo), accesibilidad (adaptado) o función (colectivo). También existen clasificaciones locales, como los taxis de sitio, libres o de radio en algunas ciudades, o el tipo de vehículo usado.")
+    st.write("Entre los medios de transporte que se usan hoy en día en la sociedad, se encuentran los servicios de Taxi; vehículos de alquiler que incluyen un conductor profesional que se contrata para transportar pasajeros a uno o varios destinos elegidos por ellos (el cliente puede indicar el punto de partida y el de llegada en su viaje). La palabra «taxi», según el Diccionario de la lengua española, es una forma abreviada de la palabra «taxímetro», que a su vez deriva del griego τάξις, «tasa» y μέτρον, que significa «medida». Usualmente, los lugares donde se recoge y se deja al pasajero se deciden por el proveedor (oferente), mientras que el usuario (demandante) los determina.")
 
-    st.markdown("**Según el tipo de servicio y vehículo:**")
+    st.write("A diferencia de los otros tipos de transporte de personas, como son las líneas del metro, tranvía o del autobús, el servicio ofrecido por el taxi se caracteriza por ser «puerta a puerta»; es decir, el conductor (al cual se le conoce como “taxista”) recoge a la persona en el punto donde se encuentra y la lleva al lugar deseado por la misma. Sin mencionar que la tarifa se calcula generalmente a través de un taxímetro, aunque suelen estar reguladas por la autoridad local y se suele determinar el precio a pagar antes o después de realizar el recorrido solicitado.")
 
-    st.markdown("""
-    - **Taxis convencionales:** Vehículos estándar que se pueden tomar en la calle o en paradas. 
-    - **Taxis ejecutivos:** Suelen ser vehículos de gama alta, más cómodos y con un servicio exclusivo. 
-    - **Taxis adaptados:** Diseñados para personas con discapacidades, equipados con rampas o elevadores. 
-    - **Taxis eléctricos:** Vehículos de cero emisiones, impulsados por energía eléctrica. 
-    - **Taxis autónomos:** Vehículos que operan sin conductor humano, gracias a la tecnología avanzada. 
-    - **Taxis acuáticos:** En ciudades con cuerpos de agua, ofrecen transporte sobre el agua, como en ríos o lagos.
-    """)
-
-    st.markdown("**Según la modalidad y operación:**")
+    st.write("Los tipos de taxis se pueden clasificar en")
 
     st.markdown("""
-    - **Taxis de sitio:** Tienen una ubicación fija y se solicitan a través de una central telefónica.
-    - **Taxis libres:** Se pueden encontrar en la calle o en paradas designadas.
-    - **Taxis colectivos:** Comparten ruta y precio predeterminado entre varios pasajeros. A veces se les llama "colectivos" o "carro de ruta".
+    - **Taxi convencional:** es el tipo más común de taxi que se encuentra en la mayoría de las ciudades. Estos taxis suelen ser de color amarillo o negro y están disponibles en las paradas designadas o se pueden llamar por teléfono. Se suelen encontrar en la mayoría de las áreas urbanas y no es necesario reservar con anticipación, además de que tienen en su equipamiento un taxímetro para calcular la tarifa del viaje en función de la distancia recorrida y el tiempo transcurrido. 
+    - **Taxis compartido:** es una opción económica y ecológica para moverse ya que (tal y como lo indica su nombre) se puede compartir el viaje con otros pasajeros que se dirigen en la misma dirección. Unas de las ventajas que ofrecen este servicio de taxis es una menor emisión de gases contaminantes al compartir un vehículo con otros pasajeros. 
+    - **Taxis adaptado:** este tipo de taxis se encuentran diseñados para personas con discapacidades físicas o movilidad reducida, equipados con rampas o elevadores para facilitar el acceso de sillas de ruedas y otros dispositivos de movilidad. 
+    - **Taxis ecológico:** aquel que utiliza tecnologías y combustibles más limpios para reducir las emisiones de carbono y minimizar su impacto en el medio ambiente. Suelen ser vehículos híbridos o eléctricos que funcionan con baterías recargables, por lo que no emiten gases de escape nocivos y son más eficientes en el consumo de combustible. 
     """)
+    
+    st.write("En Nueva York, los taxis se dividen en dos categorías: amarillo y verde, y son símbolos de la ciudad ampliamente reconocibles. Aunque puede parecer una opción de un precio elevado a la hora de moverse por la cuidad de Nueva York, en realidad los taxis pueden una opción práctica ya que son un medio de transporte moderno y limpio, tienen instalado un GPS a la vista tanto del conductor como del pasajero (lo que permite una visualización clara y precisa del viaje), y son una opción fiable a la hora de moverse por la noche en la ciudad.")
 
-    st.markdown("**Según el país:**")
+    st.write("Un detalle resaltante de los vehículos de taxi en esta ciudad es que deben tener una “Medalla de Taxi”: Un permiso transferible que permite a un conductor operar un taxi en la ciudad, siendo un sistema creado en 1937 para regular la oferta de taxis y limitar el número de licencias. Desde entonces, el gobierno de Nueva York ha regulado el precio de las medallas, que fluctúan casi diariamente. Para el año 2007, todas las inscripciones en los taxis amarillos fueron rediseñados y se volvieron fáciles de identificar con el número de la medalla seguido de un patrón ajedrezado en la parte trasera de ambos lados, un panel futurista con la tarifa en las puertas traseras y un logo retro con la inscripción **NYC Taxi** en las puertas delanteras con una T amarilla inscrita en un círculo negro (eliminando la parte “axi” en el año 2012 y dejando únicamente el logo NYC y la T en un círculo).")
 
-    st.markdown("""
-    - **Taxis amarillos:** Característicos en muchas ciudades, a menudo asociados con el transporte público general. 
-    - **Taxis de sitio o "pulmonías":** En ciertas regiones, son vehículos específicos con un color o característica distintiva, como en Mazatlán. 
-    - **Cocotaxis:** Vehículos motorizados con forma de coco, típicos de Cuba. 
-    - **Tuc tuc:** Mototaxis que se encuentran en ciudades de Tailandia y otras partes del mundo.
-    """)
-
-    st.write("En Nueva York, los taxis son de dos variedades: amarillo y verde (son símbolos de la ciudad ampliamente reconocibles). Los vehículos de taxi deben tener una medalla de taxi para operar: este sistema fue creado en 1937 como una limitación impuesta por el gobierno en la oferta de taxis; pero luego, Nueva York ya no vendió más medallas hasta 1996 después de una subasta donde se presentaría más adelante una escasez que, para el 2014, se vendían a más de un millón de dólares cada una). La principal diferencia entre los taxis amarillos y verdes radica en las zonas donde están autorizados para recoger pasajeros:")
+    st.write("La principal diferencia entre los taxis amarillos y verdes radica en las zonas donde están autorizados para recoger pasajeros:")
 
     st.markdown("""
     - **Los taxis amarillos (“medallion taxis”)** pueden recoger pasajeros en cualquier punto de la ciudad de Nueva York, incluyendo los cinco distritos y los aeropuertos. Además de que se pueden detener en la calle con la mano o encontrar en las paradas designadas para taxis.
     - **Los taxis verdes** (comúnmente conocidos como **"boro taxis"**, que empezaron a aparecer en agosto del 2013), están autorizados para recoger pasajeros en los distritos de Queens, Brooklyn, Bronx y Staten Island, así como en la parte alta de Manhattan (por encima de la calle 96 Este y la calle 110 Oeste). No pueden recoger pasajeros que los detengan en la calle en el centro de Manhattan (la "zona de exclusión de llamadas") ni en los aeropuertos de LaGuardia y JFK.
-
     """)
 
 elif opcion == "4. Datos":
