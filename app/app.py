@@ -46,9 +46,8 @@ opcion = st.sidebar.radio(
         "4. Datos",
         "5. Cuestionario SQL",
         "6. Análisis exploratorio de datos",
-        "7. Análisis Estadístico",
-        "8. Conclusiones",
-        "9. Bibliografías"
+        "7. Análisis y Conclusiones",
+        "8. Bibliografías"
     ]
 )
 
@@ -96,7 +95,6 @@ if opcion == "2. Planteamiento del problema":
     - Desarrollar una aplicación en Python (Streamlit) para interactuar dinámicamente con los datos y realizar análisis básicos.
     - Realizar un breve análisis estadístico descriptivo que permita interpretar los resultados obtenidos.
     """)
-
 
 elif opcion == "3. Marco teórico":
     st.header("Marco teórico")
@@ -489,15 +487,9 @@ elif opcion == "6. Análisis exploratorio de datos":
     )
     st.plotly_chart(fig7, use_container_width=True)
 
-
-elif opcion == "7. Análisis Estadístico":
-    st.header("Análisis Estadístico")
+elif opcion == "7. Análisis y Conclusiones":
+    st.header("Análisis y Conclusiones")
     st.write("En esta sección se lleva a cabo un análisis estadístico de los datos.")
 
-elif opcion == "8. Conclusiones":
-    st.header("Conclusiones")
-    st.write(
-        "En esta sección se presentan las conclusiones derivadas del análisis realizado.")
-
-elif opcion == "9. Bibliografías":
+elif opcion == "8. Bibliografías":
     st.header("Bibliografias")
