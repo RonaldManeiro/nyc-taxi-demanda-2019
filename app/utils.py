@@ -23,8 +23,13 @@ def load_data(filename="tripdata_sample.csv"):
 
 
 def preprocess_data(df):
-    df['tpep_pickup_datetime'] = pd.to_datetime(df['tpep_pickup_datetime'])
-    df['tpep_dropoff_datetime'] = pd.to_datetime(df['tpep_dropoff_datetime'])
+    df['tpep_pickup_datetime'] = pd.to_datetime(
+        df['tpep_pickup_datetime'], errors='coerce')
+    df['tpep_dropoff_datetime'] = pd.to_datetime(
+        df['tpep_dropoff_datetime'], errors='coerce')
+
+    # Columna con el dia de la semana (lunes=0, domingo=6)
+    df['day_of_week'] = df['tpep_pickup_datetime'].dt.day_name()
     return df
 
 

@@ -270,11 +270,24 @@ elif opcion == "4. Cuestionario SQL":
         st.exception(e)
 
 elif opcion == "5. Análisis exploratorio de datos":
+
     st.header("Análisis exploratorio de datos")
 
+    # Grafico de cantidad de viajes por hora del dia
+
     st.subheader("Cantidad de viajes por hora del día")
+
+    # Filtro
+    dias = df['day_of_week'].unique()
+    dias_ordenados = ['Monday', 'Tuesday',
+                      'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+    dias = [d for d in dias_ordenados if d in dias]
+    dias_seleccionado = st.selectbox("Selecciona el día de la semana:", dias)
+
+    df_filtrado = df[df['day_of_week'] == dias_seleccionado]
+
     # Calcular viajes por hora
-    viajes_hora = trips_per_hour(df)
+    viajes_hora = trips_per_hour(df_filtrado)
 
     # Columna de porcentaje
     viajes_hora['porcentaje'] = viajes_hora['num_viajes'] / \
@@ -396,10 +409,24 @@ elif opcion == "5. Análisis exploratorio de datos":
     st.markdown(analisis)
 
     # Mapa de calor de zonas
+
+    # Filtro horario
+    st.markdown("### 🔍 Filtros de visualización para ambos Mapas")
+    hora_min, hora_max = st.slider(
+        "Selecciona el rango horario (según hora de recogida y llegada):",
+        0, 23, (0, 23)
+    )
+
+    df_filtrado = df[
+        (df['tpep_pickup_datetime'].dt.hour >= hora_min) &
+        (df['tpep_pickup_datetime'].dt.hour <= hora_max)
+
+    ]
+
     st.subheader("Mapa del Total de Viajes por Zona de Recogida")
 
     from utils import trips_per_zone
-    zonas, geojson = trips_per_zone(df)
+    zonas, geojson = trips_per_zone(df_filtrado)
 
     fig6 = px.choropleth_mapbox(
         zonas,
@@ -422,7 +449,7 @@ elif opcion == "5. Análisis exploratorio de datos":
     st.subheader("Mapa del Total de Viajes por Zona de Llegada")
 
     from utils import trips_per_dropoff_zone
-    zonas_drop, geojson_drop = trips_per_dropoff_zone(df)
+    zonas_drop, geojson_drop = trips_per_dropoff_zone(df_filtrado)
 
     fig7 = px.choropleth_mapbox(
         zonas_drop,
