@@ -72,16 +72,20 @@ Puedes explorar los distintos apartados desde el menú lateral ✅
 
 if opcion == "2. Planteamiento del problema":
     st.header("Planteamiento del problema")
-    st.write("""
-                La movilidad urbana es uno de los ejes más importantes para el funcionamiento eficiente de una gran ciudad. En metrópolis como Nueva York, el servicio de taxis juega un rol crucial en el transporte diario de millones de personas. A lo largo del día, la demanda de taxis no es uniforme: varía según la hora, el día de la semana y la zona geográfica. Estas variaciones reflejan patrones sociales, económicos y de comportamiento urbano (por ejemplo, desplazamientos laborales en horas punta, actividades nocturnas o turismo).
-             """)
-    st.write("Comprender estos patrones permite a empresas, autoridades de transporte y conductores tomar decisiones más informadas, como:")
+    
+    st.write("Al incrementar la necesidad del ser humano de recorrer largas distancias para llegar a diferentes sitios en el mundo, no tardaron en aparecer los primeros inventos que permitieron y facilitaron: Tanto el desplazamiento de personas de un lugar a otro, como el desarrollo urbano y social de las ciudades cercanas a estos medios de transporte. Convirtiéndose la movilidad urbana en uno de los ejes más importantes para el funcionamiento eficiente de una gran ciudad. En el caso de las metrópolis como Nueva York, el servicio de taxis juega un papel crucial en el transporte diario de millones de personas al disminuir el uso de transportes privados (sobre todo cuando una persona no posee su propio automóvil por cuestiones personales, o desea evitar el estrés que produce el conducir en el tráfico). Además de que el servicio de taxis proporciona una opción rápida y segura de moverse alrededor de una zona determinada, siendo una de las primeras opciones que buscan las personas a la hora de viajar.")
+
+    st.write("A lo largo de un día, la demanda de taxis no es uniforme ya que existen múltiples variables que pueden interferir o beneficiar al momento de prestar sus servicios al público: Algunas de ellas pueden ser la hora en que se solicita al taxista, el clima que puede cambiar sin previo aviso, el día de la semana (además de encontrarse en una época específica del año, como las vacaciones de verano o de Navidad) o la zona geográfica donde se realizará la ruta solicitada por el cliente. Estas variaciones se ven reflejadas en patrones sociales, económicos y de comportamiento urbano (por ejemplo; desplazamientos laborales en horas punta, actividades nocturnas o turismo).")
+    
+    st.write("Cuando se tiene una mejor comprensión de estos patrones y sus efectos durante las jornadas diarias de los conductores, tanto las empresas como las autoridades de transporte y cada uno de sus empleados involucrados pueden tomar decisiones más informadas como:")
+    
     st.markdown("""
     - Optimizar la distribución de taxis durante las horas pico 
     - Diseñar políticas de movilidad más eficientes 
     - Reducir tiempos de espera para usuarios 
     """)
-    st.write("Este proyecto busca analizar la demanda de taxis en la ciudad de Nueva York durante 2019, con enfoque en patrones horarios y geográficos, utilizando herramientas estadísticas y computacionales modernas.")
+    
+    st.write("De este modo: Se busca con este proyecto analizar la demanda de taxis en la ciudad de Nueva York durante el mes de diciembre del año 2019, con enfoque en patrones horarios y geográficos, utilizando herramientas estadísticas y computacionales modernas.")
 
     st.subheader("Objetivo General")
     st.write("Analizar la distribución temporal y espacial de la demanda de taxis en Nueva York durante el año 2019, para identificar zonas y horarios de alta demanda que puedan aportar conclusiones útiles desde el punto de vista estadístico y urbano.")
