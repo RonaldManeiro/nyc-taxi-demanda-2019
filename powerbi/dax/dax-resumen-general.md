@@ -1,4 +1,4 @@
-## Proyecto Taxi NYC 2019
+## Proyecto NYC-Taxi-DEMANDA NYC 2019
 Este documento describe las fórmulas DAX utilizadas en el modelo Power BI para construir la sección ## Resumen General ##  del dashboard. Las expresiones permiten calcular métricas clave, extraer componentes de fecha y hora, y facilitar la segmentación por variables categóricas.
 
 ## 1. Extracción de hora de inicio
@@ -58,4 +58,35 @@ Todas las medidas están creadas como medidas DAX en el modelo.
 
 Las expresiones están optimizadas para rendimiento con 1,000,000 registros.
 
-Este documento forma parte de la carpeta dax/ del repositorio GitHub del proyecto Taxi NYC 2019.
+Este documento forma parte de la carpeta dax/ del repositorio GitHub del proyecto NYC -Taxi-DEMANDA-2019.
+
+## MODULO ANALISIS ECONOMICO 
+
+Las siguientes medidas fueron creadas para calcular indicadores económicos clave del dataset de viajes en taxi. Cada una está documentada para facilitar su interpretación y reutilización en otros módulos del proyecto.
+
+## 1. Ganancia por Pasajero por Ruta
+Ganancia por Pasajero por Ruta = 
+DIVIDE(SUM(tripdata_clean[total_amount]), SUM(tripdata_clean[passenger_count]))
+
+ Esta medida permite evaluar la eficiencia económica por trayecto.
+
+**Los demas calculos ya estan en este documento**  
+
+### Modulo analisis por zona 
+Se utilizo 
+
+NombreZonaDestino =
+LOOKUPVALUE(
+    taxi_zone_lookup[Zona],
+    taxi_zone_lookup[ID de ubicación],
+    tripdata_clean[ID de zona de destino]
+)
+Trae el nombre de la zona de destino desde la tabla de zonas, sin necesidad de relación activa.
+
+#ViajesPorRuta =
+CALCULATE(
+    COUNTROWS(tripdata_clean),
+    ALLEXCEPT(tripdata_clean, tripdata_clean[NombreZonaOrigen], tripdata_clean[NombreZonaDestino])
+)
+
+Cuenta los viajes agrupados por combinación de zona de origen y destino.
